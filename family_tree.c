@@ -91,4 +91,9 @@ link_parents(people[6], people[4], people[5]);
 
 print_family_relationships(people[6]);
 
+for (int i = 0; i < 7; i++) 
+{  
+    free(people[i]);  
+}
+
 }
