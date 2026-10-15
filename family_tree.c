@@ -25,8 +25,35 @@ Person *create_person(const char *name, int age)
 
     return p;
 }
+void read_person_info(const char *role, char *name, int *age)
+{
+printf("Enter name of your %s: ", role);
+scanf(" %49[^\n]", name);
+
+printf("Enter age of your %s: ", role);  
+scanf("%d", age);
+}
+
 int main()
 {
+char name[50];
+int age;
 
-return 0;
-};
+Person *people[7];
+
+const char *roles[7] = {  
+    "Paternal Grandfather",  
+    "Paternal Grandmother",  
+    "Maternal Grandfather",  
+    "Maternal Grandmother",  
+    "Father",  
+    "Mother",  
+    "Yourself" 
+    };
+for (int i = 0; i < 7; i++) {  
+    printf("\n");  
+    read_person_info(roles[i], name, &age);  
+    people[i] = create_person(name, age);  
+}
+
+}
